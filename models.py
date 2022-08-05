@@ -11,7 +11,8 @@ db = SQLAlchemy()
 
 class Follows(db.Model):
     """Connection of a follower <-> followed_user."""
-
+    """Two foreign keys to the same table because they're the same ID being used two different ways."""
+    
     __tablename__ = 'follows'
 
     user_being_followed_id = db.Column(
